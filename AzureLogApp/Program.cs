@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace AzureLogApp
 {
@@ -13,6 +14,7 @@ namespace AzureLogApp
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)
         {
             return WebHost.CreateDefaultBuilder(args)
+                .ConfigureLogging(logging => logging.AddAzureWebAppDiagnostics())
                 .UseStartup<Startup>();
         }
     }
