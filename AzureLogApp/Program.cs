@@ -14,7 +14,7 @@ namespace AzureLogApp
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)
         {
             return WebHost.CreateDefaultBuilder(args)
-//                .ConfigureLogging(logging => logging.AddAzureWebAppDiagnostics())
+                .ConfigureLogging(logging => logging.AddAzureWebAppDiagnostics())
                 .UseStartup<Startup>();
         }
     }
